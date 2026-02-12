@@ -5,187 +5,202 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>POS Admin | Authentication</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body>
+<body data-theme="peach">
     <!-- Background Shapes -->
-    <div class="bg-shapes"></div>
+    <div class="bg-shapes">
+        <div class="shape-1"></div>
+        <div class="shape-2"></div>
+        <div class="shape-3"></div>
+        <div class="shape-4"></div>
+    </div>
 
     <!-- Main Container -->
     <div class="container">
         <!-- Auth Card -->
         <div class="auth-card">
-            <div class="form-header">
-                <div class="logo">
-                    <i class="fas fa-cash-register"></i>
+            <!-- Left Section -->
+            <div class="auth-left">
+                <div class="form-header">
+                    <div class="logo">
+                        <i class="fas fa-cash-register"></i>
+                    </div>
+                    <h1 class="title">Admin Panel </h1>
+                    <p class="subtitle">Secure access to your dashboard</p>
                 </div>
-                <h1 class="title">POS Admin</h1>
-                <p class="subtitle">Secure access to your dashboard</p>
-            </div>
 
-            <!-- Theme Selector -->
-            <div class="theme-selector">
-                <p class="theme-title">Select Theme</p>
-                <div class="theme-options">
-                    <div class="theme-option active" data-theme="peach" title="Peach Theme">
-                        <div class="theme-preview peach"></div>
-                    </div>
-                    <div class="theme-option" data-theme="seagreen" title="Sea Green Theme">
-                        <div class="theme-preview seagreen"></div>
-                    </div>
-                    <div class="theme-option" data-theme="pastel" title="Pastel Theme">
-                        <div class="theme-preview pastel"></div>
-                    </div>
-                    <div class="theme-option" data-theme="purple" title="Purple Theme">
-                        <div class="theme-preview purple"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Form Container -->
-            <div class="form-container">
-                <!-- Login Form -->
-                <form id="loginForm" class="form active">
-                    <div class="form-divider">
-                        <div class="divider-line"></div>
-                        <span class="divider-text">Login to your account</span>
-                        <div class="divider-line"></div>
-                    </div>
-
-                    <div class="input-group">
-                        <label class="input-label">Email Address</label>
-                        <div class="input-wrapper">
-                            <input type="email" placeholder="admin@example.com" class="input-field" required />
-                            <i class="input-icon fas fa-envelope"></i>
+                <!-- Theme Selector -->
+                <div class="theme-selector">
+                    <p class="theme-title">Select Theme</p>
+                    <div class="theme-options">
+                        <div class="theme-option active" data-theme="peach" title="Peach Theme">
+                            <div class="theme-preview peach"></div>
+                        </div>
+                        <div class="theme-option" data-theme="pastel-green" title="Pastel Green Theme">
+                            <div class="theme-preview pastel-green"></div>
+                        </div>
+                        <div class="theme-option" data-theme="dark-seagreen" title="Seagreen Dark">
+                            <div class="theme-preview dark-seagreen"></div>
+                        </div>
+                        <div class="theme-option" data-theme="dark-purple" title="Purple Dark">
+                            <div class="theme-preview dark-purple"></div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="input-group">
-                        <label class="input-label">Password</label>
-                        <div class="input-wrapper">
-                            <input type="password" id="loginPassword" placeholder="Enter your password"
-                                class="input-field" required />
-                            <i class="input-icon fas fa-lock"></i>
-                            <button type="button" class="password-toggle" data-target="loginPassword">
-                                <i class="fas fa-eye"></i>
+            <!-- Vertical Divider -->
+            <div class="vertical-divider"></div>
+
+            <!-- Right Section - Forms -->
+            <div class="auth-right">
+                <!-- Form Container  --->
+                <div class="form-container">
+                    <!-- Login Form -->
+                    <form id="loginForm" class="form active">
+                        <div class="form-divider">
+                            <div class="divider-line"></div>
+                            <span class="divider-text">Login to your account</span>
+                            <div class="divider-line"></div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Email Address</label>
+                            <div class="input-wrapper">
+                                <input type="email" placeholder="admin@example.com" class="input-field" required />
+                                <i class="input-icon fas fa-envelope"></i>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Password</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="loginPassword" placeholder="Enter your password"
+                                    class="input-field" required />
+                                <i class="input-icon fas fa-lock"></i>
+                                <button type="button" class="password-toggle" data-target="loginPassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-footer">
+                            <button type="button" class="link-btn" id="showForgot">
+                                Forgot Password?
                             </button>
                         </div>
-                    </div>
 
-                    <div class="form-footer">
-                        <button type="button" class="link-btn" id="showForgot">
-                            Forgot Password?
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Login to Dashboard
+                        </button>
+                    </form>
+
+                    <!-- Register Form -->
+                    <form id="registerForm" class="form">
+                        <div class="form-divider">
+                            <div class="divider-line"></div>
+                            <span class="divider-text">Create new account</span>
+                            <div class="divider-line"></div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Full Name</label>
+                            <div class="input-wrapper">
+                                <input type="text" placeholder="John Doe" class="input-field" required />
+                                <i class="input-icon fas fa-user"></i>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Email Address</label>
+                            <div class="input-wrapper">
+                                <input type="email" placeholder="john@example.com" class="input-field" required />
+                                <i class="input-icon fas fa-envelope"></i>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Phone Number</label>
+                            <div class="input-wrapper">
+                                <input type="tel" placeholder="+1 (555) 123-4567" class="input-field" required />
+                                <i class="input-icon fas fa-phone"></i>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Create Password</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="registerPassword" placeholder="Create a strong password"
+                                    class="input-field" required />
+                                <i class="input-icon fas fa-lock"></i>
+                                <button type="button" class="password-toggle" data-target="registerPassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-user-plus"></i>
+                            Create Account
+                        </button>
+                    </form>
+
+                    <!-- Forgot Password Form -->
+                    <form id="forgotForm" class="form">
+                        <div class="form-divider">
+                            <div class="divider-line"></div>
+                            <span class="divider-text">Reset your password</span>
+                            <div class="divider-line"></div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Registered Email</label>
+                            <div class="input-wrapper">
+                                <input type="email" placeholder="Enter your registered email" class="input-field"
+                                    required />
+                                <i class="input-icon fas fa-envelope"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-footer">
+                            <p class="hint-text">
+                                We'll send a password reset link to your email
+                            </p>
+                        </div>
+
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Reset Link
+                        </button>
+                    </form>
+
+                    <!-- Form Toggle -->
+                    <div class="form-toggle">
+                        <p id="toggleText">Don't have an account?</p>
+                        <button type="button" class="link-btn" id="toggleForm">
+                            Register
                         </button>
                     </div>
 
-                    <button type="submit" class="btn-primary">
-                        <i class="fas fa-sign-in-alt"></i>
-                        Login to Dashboard
-                    </button>
-                </form>
-
-                <!-- Register Form -->
-                <form id="registerForm" class="form">
-                    <div class="form-divider">
-                        <div class="divider-line"></div>
-                        <span class="divider-text">Create new account</span>
-                        <div class="divider-line"></div>
+                    <!-- Back to Login -->
+                    <div class="back-login">
+                        <button type="button" class="link-btn" id="backToLogin">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Login
+                        </button>
                     </div>
-
-                    <div class="input-group">
-                        <label class="input-label">Full Name</label>
-                        <div class="input-wrapper">
-                            <input type="text" placeholder="John Doe" class="input-field" required />
-                            <i class="input-icon fas fa-user"></i>
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <label class="input-label">Email Address</label>
-                        <div class="input-wrapper">
-                            <input type="email" placeholder="john@example.com" class="input-field" required />
-                            <i class="input-icon fas fa-envelope"></i>
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <label class="input-label">Phone Number</label>
-                        <div class="input-wrapper">
-                            <input type="tel" placeholder="+1 (555) 123-4567" class="input-field" required />
-                            <i class="input-icon fas fa-phone"></i>
-                        </div>
-                    </div>
-
-                    <div class="input-group">
-                        <label class="input-label">Create Password</label>
-                        <div class="input-wrapper">
-                            <input type="password" id="registerPassword" placeholder="Create a strong password"
-                                class="input-field" required />
-                            <i class="input-icon fas fa-lock"></i>
-                            <button type="button" class="password-toggle" data-target="registerPassword">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn-primary">
-                        <i class="fas fa-user-plus"></i>
-                        Create Account
-                    </button>
-                </form>
-
-                <!-- Forgot Password Form -->
-                <form id="forgotForm" class="form">
-                    <div class="form-divider">
-                        <div class="divider-line"></div>
-                        <span class="divider-text">Reset your password</span>
-                        <div class="divider-line"></div>
-                    </div>
-
-                    <div class="input-group">
-                        <label class="input-label">Registered Email</label>
-                        <div class="input-wrapper">
-                            <input type="email" placeholder="Enter your registered email" class="input-field"
-                                required />
-                            <i class="input-icon fas fa-envelope"></i>
-                        </div>
-                    </div>
-
-                    <div class="form-footer">
-                        <p class="hint-text">
-                            We'll send a password reset link to your email
-                        </p>
-                    </div>
-
-                    <button type="submit" class="btn-primary">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Reset Link
-                    </button>
-                </form>
-
-                <!-- Form Toggle -->
-                <div class="form-toggle">
-                    <p id="toggleText">Don't have an account?</p>
-                    <button type="button" class="link-btn" id="toggleForm">
-                        Register
-                    </button>
-                </div>
-
-                <!-- Back to Login -->
-                <div class="back-login">
-                    <button type="button" class="link-btn" id="backToLogin">
-                        <i class="fas fa-arrow-left"></i>
-                        Back to Login
-                    </button>
                 </div>
             </div>
         </div>
     </div>
 
+
     <!-- Scripts -->
-    <script src="theme.js"></script>
     <script src="script.js"></script>
 </body>
 
